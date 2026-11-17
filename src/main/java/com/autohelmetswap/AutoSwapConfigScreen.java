@@ -22,7 +22,6 @@ public final class AutoSwapConfigScreen extends Screen {
 		this.delayField = new EditBox(this.font, center - 100, this.height / 2 - 8, 200, 20,
 				Component.translatable("autohelmetswap.config.delay"));
 		this.delayField.setMaxLength(5);
-		this.delayField.setFilter(value -> value.isEmpty() || value.chars().allMatch(Character::isDigit));
 		this.delayField.setValue(String.valueOf(SwapConfig.getDelayMillis()));
 		this.addRenderableWidget(this.delayField);
 
