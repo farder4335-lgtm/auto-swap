@@ -140,7 +140,7 @@ public class AutoHelmetSwapClient implements ClientModInitializer {
 			return;
 		}
 
-		if (pressed != null && mc.screen == null) {
+		if (pressed != null && mc.gui.screen() == null) {
 			this.startJob(player, pressed);
 		}
 	}
@@ -191,7 +191,7 @@ public class AutoHelmetSwapClient implements ClientModInitializer {
 		Job current = this.job;
 
 		// A screen opened or the open container changed: stop, vanilla returns any carried item on close.
-		if (player.containerMenu != menu || mc.screen != null) {
+		if (player.containerMenu != menu || mc.gui.screen() != null) {
 			this.job = null;
 			return;
 		}
