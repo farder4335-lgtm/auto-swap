@@ -1,0 +1,11 @@
+{
+	"key.category.autohelmetswap.main": "Auto Helmet Swap",
+	"key.autohelmetswap.superman_jack": "Superman Head ↔ Jack Head",
+	"key.autohelmetswap.netherite_superman": "Netherite Helmet ↔ Superman Head",
+	"key.autohelmetswap.netherite_jack": "Netherite Helmet ↔ Jack Head",
+	"autohelmetswap.name.superman": "Superman Head",
+	"autohelmetswap.name.jack": "Jack Head",
+	"autohelmetswap.name.netherite": "Netherite Helmet",
+	"autohelmetswap.msg.not_found": "Auto Helmet Swap: %s not found in inventory",
+	"autohelmetswap.msg.failed": "Auto Helmet Swap: could not equip %s"
+}

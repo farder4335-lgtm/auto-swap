@@ -1,0 +1,23 @@
+{
+	"schemaVersion": 1,
+	"id": "autohelmetswap",
+	"version": "${version}",
+	"name": "Auto Helmet Swap",
+	"description": "Client-side mod with three keybinds that toggle your helmet slot between Superman Head, Jack Head and a Netherite Helmet.",
+	"authors": [
+		"Auto Helmet Swap"
+	],
+	"license": "MIT",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.autohelmetswap.AutoHelmetSwapClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
