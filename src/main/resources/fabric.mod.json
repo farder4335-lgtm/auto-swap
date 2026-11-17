@@ -12,6 +12,9 @@
 	"entrypoints": {
 		"client": [
 			"com.autohelmetswap.AutoHelmetSwapClient"
+		],
+		"modmenu": [
+			"com.autohelmetswap.AutoSwapModMenu"
 		]
 	},
 	"depends": {
