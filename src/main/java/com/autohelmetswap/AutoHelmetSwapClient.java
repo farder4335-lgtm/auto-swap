@@ -93,9 +93,11 @@ public class AutoHelmetSwapClient implements ClientModInitializer {
 
 	private List<SwapPair> pairs;
 	private Job job;
+	private long nextStepAtNanos;
 
 	@Override
 	public void onInitializeClient() {
+		SwapConfig.load();
 		KeyMapping.Category category = KeyMapping.Category.register(
 				Identifier.fromNamespaceAndPath(MOD_ID, "main"));
 
@@ -136,7 +138,9 @@ public class AutoHelmetSwapClient implements ClientModInitializer {
 		}
 
 		if (this.job != null) {
-			this.runStep(mc, player);
+			if (System.nanoTime() >= this.nextStepAtNanos) {
+				this.runStep(mc, player);
+			}
 			return;
 		}
 
@@ -230,6 +234,7 @@ public class AutoHelmetSwapClient implements ClientModInitializer {
 		}
 
 		current.step++;
+		this.nextStepAtNanos = System.nanoTime() + SwapConfig.getDelayMillis() * 1_000_000L;
 	}
 
 	private static void click(Minecraft mc, LocalPlayer player, AbstractContainerMenu menu, int slot) {
