@@ -171,6 +171,7 @@ public class AutoHelmetSwapClient implements ClientModInitializer {
 			int slot = findSlot(menu, target);
 			if (slot >= 0) {
 				this.job = new Job(slot, target);
+				this.nextStepAtNanos = 0L;
 				return;
 			}
 		}
