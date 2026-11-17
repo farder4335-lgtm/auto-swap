@@ -38,7 +38,7 @@ public class AutoHelmetSwapClient implements ClientModInitializer {
 
 	/** An item the mod can recognise. */
 	private enum Target {
-		SUPERMAN("autohelmetswap.name.superman", "Сила Супермена"),
+		SUPERMAN("autohelmetswap.name.superman", "Сила СупеМена"),
 		JACK("autohelmetswap.name.jack", "Голова Джека"),
 		NETHERITE("autohelmetswap.name.netherite", null);
 
