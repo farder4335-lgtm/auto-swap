@@ -1,6 +1,6 @@
 package com.autohelmetswap;
 
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
@@ -46,20 +46,20 @@ public final class AutoSwapConfigScreen extends Screen {
 				return;
 			}
 		}
-		this.minecraft.setScreen(this.parent);
+		this.minecraft.gui.setScreen(this.parent);
 	}
 
 	@Override
-	public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-		super.render(graphics, mouseX, mouseY, partialTick);
-		graphics.drawCenteredString(this.font, Component.translatable("autohelmetswap.config.delay"),
-				this.width / 2, this.height / 2 - 30, 0xFFFFFF);
-		graphics.drawCenteredString(this.font, Component.literal("0–5000 ms"),
-				this.width / 2, this.height / 2 + 50, 0xA0A0A0);
+	public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+		super.extractRenderState(graphics, mouseX, mouseY, partialTick);
+		graphics.centeredText(this.font, Component.translatable("autohelmetswap.config.delay"),
+				this.width / 2, this.height / 2 - 30, 0xFFFFFFFF);
+		graphics.centeredText(this.font, Component.literal("0–5000 ms"),
+				this.width / 2, this.height / 2 + 50, 0xFFA0A0A0);
 	}
 
 	@Override
 	public void onClose() {
-		this.minecraft.setScreen(this.parent);
+		this.minecraft.gui.setScreen(this.parent);
 	}
 }
